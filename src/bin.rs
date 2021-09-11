@@ -23,10 +23,10 @@ fn main() {
 
 				println!("Rolling {}d{}:", roll.quantity, roll.faces);
 
-				for _ in 0..roll.quantity {
+				for n in 0..roll.quantity {
 					//For each DieRoll.quantity, obtain a random integer in range [1, DieRoll.faces]
 					let face = rng.gen::<usize>() % roll.faces + 1;
-					println!("{}", face);
+					println!("#{}: {}", n + 1, face);
 					sum += face;
 				}
 			}
