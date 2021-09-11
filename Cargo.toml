@@ -19,4 +19,4 @@ name = "dicey"
 path = "src/bin.rs"
 
 [dependencies]
-rand = "*"
+rand = "0.8.4"
