@@ -67,7 +67,7 @@ mod tests {
 
 	#[test]
 	fn parse_fail() {
-		const tests: &'static [&'static str] = &["r2d2", "-3d3", "3d-3", "3d0", "0d3", "3d", "d3", ""];
+		const tests: &'static [&'static str] = &["r2d2", "-3d3", "3d-3", "3d0", "0d3", "3d", "d3", "3d3,", ",", ""];
 
 		for test in tests {
 			assert_eq!(parse(test), None, "Incorrectly parsed invalid string \"{}\"", test);
