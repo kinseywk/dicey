@@ -11,7 +11,8 @@ fn main() {
 	let mut rng = rand::thread_rng();
 
 	for arg in args {
-		let mut sum: usize = 0;
+		let mut sum: isize = 0;
+		let mut adjustment: isize = 0;
 
 		#[cfg(debug_assertions)]
 		println!("Input string \"{}\"", arg);
@@ -27,17 +28,21 @@ fn main() {
 					//For each DieRoll.quantity, obtain a random integer in range [1, DieRoll.faces]
 					let face = rng.gen::<usize>() % roll.faces + 1;
 					println!("#{}: {}", n + 1, face);
-					sum += face;
+					sum += face as isize;
 				}
+
+				adjustment += roll.adjustment;
 			}
 		} else {
 			println!("Parsing failure");
 		}
-
-		if sum > 0 {
-			println!("Total = {}", sum);
+		
+		if adjustment == 0 {
+			println!("Total = {}\n", sum);
+		} else if adjustment > 0 {
+			println!("Total = {} from dice + {} from bonus = {}\n", sum, adjustment, sum + adjustment);
+		} else if adjustment < 0 {
+			println!("Total = {} from dice - {} from malus = {}\n", sum, -adjustment, sum + adjustment);
 		}
-
-		println!();
 	}
 }

@@ -29,6 +29,8 @@ Examples:
 
 * Yahtzee: dicey 5d6
 
-* D&D initiative, saving throws, etc.: dicey 1d20
+* D&D initiative & saving throws: dicey 1d20
 
-* BattleTech multiple weapons: dicey 2d6,2d6,2d6
+* Pathfinder Magic Missile damage: dicey 1d4+1
+
+* Various dice w/ bonuses & penalties: dicey 1d4,2d6+1,3d8-2
