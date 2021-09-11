@@ -14,7 +14,7 @@ fn main() {
 	if let Some(mut rolls) = parse("5d6") {
 		if let Some(roll) = rolls.pop() {
 			for _ in 0..roll.quantity {
-				println!("{}", random::<u8>());
+				println!("{}", random::<u8>() % roll.faces + 1);
 			}
 		}
 	}
