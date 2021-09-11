@@ -1,0 +1,16 @@
+[package]
+name = "dicey"
+version = "1.0.0"
+authors = ["Kyle Kinsey <kinseywk@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "dicey"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dicey"
+path = "src/bin.rs"
+
+[dependencies]
+rand = "*"
